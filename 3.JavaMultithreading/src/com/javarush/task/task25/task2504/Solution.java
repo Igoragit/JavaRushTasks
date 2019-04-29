@@ -1,0 +1,41 @@
+package com.javarush.task.task25.task2504;
+
+
+
+/*
+Switch для нитей
+*/
+public class Solution {
+    public static void processThreads(Thread... threads) {
+        //implement this method - реализуйте этот метод
+
+        for(Thread in: threads){
+
+            switch (in.getState()) {
+                case NEW:
+                    in.start();
+                    break;
+                case RUNNABLE:
+                    in.isInterrupted();
+                    break;
+                case BLOCKED:
+                    in.interrupt();
+                    break;
+                case WAITING:
+                    in.interrupt();
+                    break;
+                case TIMED_WAITING:
+                    in.interrupt();
+                    break;
+                case TERMINATED:
+                    System.out.println(in.getPriority());
+                    break;
+            }
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+    }
+}
